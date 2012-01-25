@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Disco (MapReduce) Visualization</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="screen" charset="utf-8" />
+    <!--[if IE]>
+    <script type="text/javascript" src="lib/excanvas.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="lib/global-es5.js"></script>
+    <script type="text/javascript" src="lib/date.js"></script>
+    <script type="text/javascript" src="lib/json2.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-ui-1.8.6.custom.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="lib/jquery.jsPlumb-1.2.3-all.js"></script>
+    <script type="text/javascript" src="mrVis.logLoader.js"></script>
+    <script type="text/javascript" src="mrVis.jsplumb.js"></script>
+    <script type="text/javascript" src="mrVis.main.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19260971-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Disco (MapReduce) Visualization</h1>
+    <p>This is a very basic prototype visualization of <a href="http://code.google.com/edu/parallel/mapreduce-tutorial.html">MapReduce</a>. This prototype is part of my bachelor's thesis at <a href="http://www.aalto.fi/en/">Aalto University</a> and is coded entirely in client-side JavaScript/jQuery. The program parses <a href="bible_rawevents_modified.txt">a Disco log file</a> and produces a stepwise visualization from it.</p>
+    <p>
+      <strong>code/contact: <a href="http://about.me/jyrituulos">Jyri Tuulos</a></strong> - 
+      data: <a href="http://discoproject.org/">http://discoproject.org/</a> - 
+      plumbing: <a href="http://code.google.com/p/jsplumb/">jsPlumb by Simon Porritt</a>
+    </p>
+    <p><strong>(press 'j' to advance the visualization, refresh page to start over)</strong></p>
+    <hr />
+    <div id="vis-log"></div>
+    <div id="vis-container">
+      <div id="vis-master"></div>
+      <div id="vis-input" class="vis-column">
+        <h2>Input</h2>
+        <div class="nodes"></div>
+      </div>
+      <div id="vis-map" class="vis-column">
+        <h2>Map</h2>
+        <div class="nodes"></div>
+      </div>
+      <div id="vis-inter" class="vis-column">
+        <h2>Temp</h2>
+        <div class="nodes"></div>
+      </div>
+      <div id="vis-reduce" class="vis-column">
+        <h2>Reduce</h2>
+        <div class="nodes"></div>
+      </div>
+      <div id="vis-output" class="vis-column">
+        <h2>Output</h2>
+        <div class="nodes"></div>
+      </div>
+      <div id="vis-paths">
+        <div id="vis-paths-control"></div>
+        <div id="vis-paths-data"></div>
+      </div>
+    </div>
+    <h2>All Events</h2>
+    <table id="log-lines">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>

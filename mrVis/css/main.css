@@ -1,0 +1,83 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+#vis-log {
+  font-family: Consolas, Monaco, monospace;
+}
+#vis-container {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 2em;
+  background: #ddd;
+  padding: 1em 0 1em;
+}
+#vis-container #vis-master {
+  display: none;
+  margin-bottom: 1em;
+}
+#vis-container #vis-master .node {
+  margin: 0 auto;
+  width: 200px;
+}
+#vis-container .vis-column {
+  position: relative;
+  width: 11%;
+  margin-right: 8%;
+  margin-left: 1%;
+  float: left;
+  display: none;
+}
+#vis-container .node {
+  background: #666;
+  padding: 2px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 1em;
+}
+#vis-container .node.running { background: #aa0; }
+#vis-container .node.done { background: #060; }
+#vis-container .node > div {
+  padding: 4px 6px;
+}
+#vis-container .node .title {
+  color: #fff;
+  font-weight: bold;
+}
+#vis-container .node .info {
+  background: #fff;
+}
+
+#vis-container .node.file {
+  background: transparent;
+  border: 2px solid #338;
+}
+#vis-container .node.file .title { color: #338; }
+
+#vis-container #vis-paths {
+  position: absolute;
+}
+#vis-container .node { z-index: 1000; }
+._jsPlumb_endpoint { z-index: 999; }
+._jsPlumb_connector { z-index: 998; }
+
+#log-lines {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Consolas, Monaco, monospace;
+}
+#log-lines tr.current {
+  background-color: #ffa;
+}
+#log-lines th {
+  text-align: left;
+}
+#log-lines td,
+#log-lines th {
+  padding: 5px;
+  border: 1px solid #888;
+}
