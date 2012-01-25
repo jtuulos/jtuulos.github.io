@@ -1,0 +1,172 @@
+@body-bg: #121415;
+@base-text: #fff;
+
+body {
+  font: 120% Arial, Helvetica, sans-serif;
+  background: @body-bg;
+  color: @base-text;
+}
+#wrapper {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+#header {
+  font-size: 85%;
+  color: darken(@base-text, 50%);
+  border-bottom: 1px solid darken(@base-text, 80%);
+  padding: 1em 0;
+}
+
+#project-links {
+  display: none;
+}
+#projects {
+  display: none;
+}
+
+.medialab_slide {
+  padding: 2em;
+  text-align: center;
+  font-size: 120%;
+  
+  h2 {
+    margin: 0 0 1em;
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid darken(@base-text, 50%);
+  }
+  
+  ul.big-points {
+    list-style-type: none;
+    padding: 0;
+    
+    li {
+      margin: 2em 0;
+    }
+  }
+}
+
+/* Calendar styles */
+/*******************/
+@day-fill: hsl(200, 90%, 30%);
+@q0-fill: @day-fill;
+@q1-fill: lighten(@day-fill, 25%);
+@q2-fill: lighten(@day-fill, 45%);
+@q3-fill: lighten(@day-fill, 65%);
+
+@marker-stroke: #fb0;
+
+#visualization {
+  margin: 2em 0 5em;
+  
+  #legend {
+    font-size: 85%;
+    list-style-type: none;
+    margin: 2em 0 1em;
+    padding-left: 1em;
+    color: darken(@base-text, 30%);
+    overflow: hidden;
+    
+    li {
+      float: left;
+      margin-right: 2em;
+      
+      &.category {
+        border-left: 1.1em solid #fff;
+        padding-left: 0.5em;
+      }
+      &.q0 { border-color: @q0-fill; }
+      &.q1 { border-color: @q1-fill; }
+      &.q2 { border-color: @q2-fill; }
+      &.q3 { border-color: @q3-fill; }
+    } 
+  }
+  
+  .settings {
+    color: darken(@base-text, 30%);
+    font-size: 85%;
+    padding-left: 1em;
+    
+    input[type="checkbox"] {
+      margin-right: 0.5em;
+    }
+  }
+  
+  #chart {
+    margin: 20px 0;
+    
+    .year-label {
+      font: 26px sans-serif;
+      fill: lighten(@body-bg, 90%);
+      text-rendering: optimizeLegibility;
+    }
+    .month {
+      fill: none;
+      stroke: black;
+      stroke-width: 4px;
+      shape-rendering: crispEdges;
+    }
+    .day {
+      fill: lighten(@body-bg, 13%);
+      stroke: black;
+      shape-rendering: crispEdges;
+      
+      &.q0-4 { fill: @q0-fill; }
+      &.q1-4 { fill: @q1-fill; }
+      &.q2-4 { fill: @q2-fill; }
+      &.q3-4 { fill: @q3-fill; }
+    }
+    
+    .marker-wrapper {
+      cursor: pointer;
+      display: none;
+      
+      .marker {
+        stroke-width: 5px;
+        stroke: @marker-stroke;
+        fill: fadeout(@marker-stroke, 80%);
+        
+        &.visited {
+          stroke: fadeout(@marker-stroke, 60%);
+        }
+      }
+      
+      .marker-label {
+        font: 18px sans-serif;
+        fill: @marker-stroke;
+        text-rendering: optimizeLegibility;
+        font-weight: bold;
+        
+        &.shadow {
+          fill: black;
+        }
+      }
+    }
+    
+    &.markers .marker-wrapper {
+      display: inline;
+    }
+  }
+}
+
+/* Fancybox styles */
+/*******************/
+
+#fancybox-wrap {
+  @fb-bg: lighten(@body-bg, 20%);
+  
+  #fancybox-outer {
+    background: @fb-bg;    
+    
+    #fancybox-content {
+      border-color: @fb-bg !important;
+    }
+    
+    #fancybox-title.fancybox-title-inside {
+      font-size: 16px;
+      background: @fb-bg;
+      color: darken(@base-text, 20%);
+      margin-top: 0.5em;
+    }
+  } 
+}

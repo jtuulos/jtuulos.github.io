@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Jyri Tuulos / Media Lab Helsinki / Entrance interview demo 2011</title>
+  <link rel="stylesheet" href="styles/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="styles/main.css" />
+  <link type="text/css" rel="stylesheet/less" href="styles/main.less" />
+  
+  <script type="text/javascript" src="scripts/less-1.0.41.min.js"></script>
+  <script type="text/javascript" src="scripts/jquery-1.5.2.min.js"></script>
+  <script type="text/javascript" src="scripts/jquery.svg.min.js"></script>
+  <script type="text/javascript" src="scripts/jquery.svganim.min.js"></script>
+  <script type="text/javascript" src="scripts/jquery.svgdom.min.js"></script>
+  <script type="text/javascript" src="scripts/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+  <script type="text/javascript" src="scripts/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+  
+  <script type="text/javascript" src="scripts/d3/d3.js"></script>
+  <script type="text/javascript" src="scripts/d3/d3.csv.js"></script>
+  <script type="text/javascript" src="scripts/d3/d3.time.js"></script>
+  <script type="text/javascript" src="scripts/d3/calendar.js"></script>
+  <script type="text/javascript" src="scripts/mlab.demo.project-history.js"></script>
+  <script type="text/javascript" src="scripts/mlab.demo.portfolio.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="header">Jyri Tuulos (jyri.tuulos@gmail.com) / Media Lab Helsinki / Entrance interview demo 2011</div>
+    <div id="visualization">
+      <h1>My Work History Visualized</h1>
+      <p><em>When have I worked on my projects?</em></p>
+      <ul id="legend">
+        <li>Files modified per day:</li>
+        <li class="category q0">1-5</li>
+        <li class="category q1">6-10</li>
+        <li class="category q2">11-15</li>
+        <li class="category q3">16-</li>
+      </ul>
+      <div class="small settings">
+        <input type="checkbox" id="marker-toggle" name="marker-toggle" />
+        <label for="marker-toggle">Show portfolio highlights</label>
+      </div>
+      <div id="chart"></div>
+    </div>
+  
+    <ul id="project-links">
+      <a href="#project-humpla" name="First file" date="2001-07-11" title="humpla.avi - 11th July, 2001"></a>
+      <a href="images/beach7.jpg" name="Beach" date="2002-07-27" title="beach7.jpg - 27th July, 2002"></a>
+      <a href="images/ukkeli14.jpg" name="Ukkeli" date="2003-10-20" title="ukkeli14.jpg - 20th October, 2003"></a>
+      
+      <a rel="assembly04" name="Assembly '04" date="2004-07-14" href="images/jack2_20_animTest_f430.jpg" title="Project &quot;Jack&quot; - Happy - 15th July, 2004"></a>
+      <a rel="assembly04" href="images/jack2_20_animTest_f202.jpg" title="Project &quot;Jack&quot; - Angry - 15th July, 2004"></a>
+      <a rel="assembly04" href="images/jack2_20_animTest_f95.jpg" title="Project &quot;Jack&quot; - Surprise - 15th July, 2004"></a>
+      <a rel="assembly04" href="images/shaky_screen2.jpg" title="Assembly 2004 Short film competition - The Universe is Shaky - Room shot"></a>
+      <a rel="assembly04" href="images/shaky_screen3.jpg" title="Assembly 2004 Short film competition - The Universe is Shaky - Surprise shot"></a>
+      
+      <a href="images/tuulos_diplomi.jpg" name="Arts Diploma" date="2004-11-03" title="Arts Diploma Project - 11th November, 2004"></a>
+      
+      <a rel="photos" href="images/oja2.jpg" name="Photos" date="2005-03-24" title="Photography #1 - 24th March, 2005"></a>
+      <a rel="photos" href="images/torni.jpg" title="Photography #2 - 24th March, 2005"></a>
+      
+      <a rel="lasi3d" href="images/lasi_3d_wip1.jpg" name="&quot;Hologram&quot;" date="2005-08-17" title="Fruit &quot;Hologram&quot; - 17th August, 2005"></a>
+      <a rel="lasi3d" href="images/lasi_3d_wip2.jpg" title="Fruit &quot;Hologram&quot; - 17th August, 2005"></a>
+      <a rel="lasi3d" href="images/lasi_3d_valmis.jpg" title="Fruit &quot;Hologram&quot; - 17th August, 2005"></a>
+      
+      <a rel="kotisivu2006" href="images/KS2006_luonnos02.jpg" name="Homepage 2006" date="2006-01-16" title="Personal portfolio website - 16th January, 2006"></a>
+      <a rel="kotisivu2006" href="images/kotisivu2006.jpg" title="Personal portfolio website - 16th January, 2006"></a>
+      
+      <a rel="taik2006" href="images/jyri_tuulos_taik_aukeama_03.jpg" name="TaiK 2006" date="2006-03-16" title="TaiK / Graphic Design - Preliminary assignment - 16th March, 2006"></a>
+      <a rel="taik2006" href="images/jyri_tuulos_taik_aukeama_05.jpg" title="TaiK / Graphic Design - Preliminary assignment - 16th March, 2006"></a>
+      <a rel="taik2006" href="images/jyri_tuulos_taik_aukeama_06.jpg" title="TaiK / Graphic Design - Preliminary assignment - 16th March, 2006"></a>
+      
+      <a rel="msm" href="images/msm_website.png" date="2006-08-27" name="Manhattan Story Mashup" title="Manhattan Story Mashup (with Ville Tuulos and Jürgen Scheible) - 27th August, 2006"></a>
+      <a rel="msm" href="images/msm_photo01.jpg" title="Manhattan Story Mashup logos (photo by Becky Stern)"></a>
+      <a rel="msm" href="images/msm_photo02.jpg" title="Manhattan Story Mashup t-shirts (photo by Becky Stern)"></a>
+      
+      <a href="images/cannarit07.jpg" name="Freshman party" date="2007-11-13" title="Freshman students' party - 13th November, 2007"></a>
+      <a href="images/m0_10110.jpg" name="Tietokilta" date="2008-01-03" title="Tietokilta 23rd anniversary - 3rd January, 2008"></a>
+      <a href="images/iuc_juliste.png" name="ICML/UAI/COLT" date="2008-01-22" title="ICML/UAI/COLT 2008 conferences - Helsinki University, Department of Computer Science - 22nd January, 2008"></a>
+      
+      <a rel="apidock" href="images/railsdoc_screenshot03.jpg" name="APIdock" date="2008-06-11" title="Rails-doc.org website screenshot - 11th June, 2008"></a>
+      <a rel="apidock" href="images/apidock.png" title="APIdock.com website screenshot - 17th April, 2011"></a>
+      
+      <a href="images/can_we_join_too.jpg" name="Assembly '08" date="2008-07-30" title="Assembly 2008 Graphics competition - &quot;Can we join too?&quot; - 30th July, 2008"></a>
+      
+      <a href="images/pervasive_logo.jpg" name="Pervasive 2010" date="2009-02-24" title="Pervasive 2010 conference logo - Helsinki University, Department of Computer Science - 24th February, 2009"></a>
+      
+      <a rel="flowdock" href="images/flowdock_logo03_white.png" name="Flowdock" date="2009-05-28" title="Flowdock logo - 28th May, 2009"></a>
+      <a rel="flowdock" href="images/techcrunch_flowdock_2010-11-10.jpg" title="Flowdock in Techcrunch.com - 10th November, 2010"></a>
+      
+      <a href="images/the_hummingbird.jpg" name="Assembly '09" date="2009-08-05" title="Assembly 2009 Graphics competition - &quot;The Hummingbird&quot; (2nd place) - 5th August, 2009"></a>
+      
+      <a rel="aot" href="images/aaltoontracks_logo.png" name="Aalto on Tracks" date="2010-02-21" title="Aalto on Tracks logo - 21st February, 2010"></a>
+      <a rel="aot" href="images/aot_website.jpg" title="Aalto on Tracks website - 17st April, 2011"></a>
+      
+      <a rel="aaltovg" href="images/aaltovg_logo.jpg" name="Aalto Venture Garage" date="2010-04-13" title="Aalto Venture Garage logo - 13th April, 2010"></a>
+      <a rel="aaltovg" href="images/aaltovg_website.jpg" title="Aalto Venture Garage website - 4th October, 2010"></a>
+      <a rel="aaltovg" href="images/aaltovg_kauppalehti_2010-10-01.jpg" title="Aalto Venture Garage in Kauppalehti.fi - 1st October, 2010"></a>
+      
+      <a href="images/flowdock_ui.jpg" name="Flowdock UI" date="2010-08-30" title="Flowdock user interface - 30th August, 2010"></a>
+      
+      <a rel="dominante" href="images/35v_juhlakonsertti_juliste.jpg" name="Dominante" date="2010-10-13" title="Dominante 35th anniversary concert poster - 13th October, 2010"></a>
+      <a rel="dominante" href="images/dominante_lastenkonsertti.jpg" title="Dominante children's concert poster - 7th September, 2010"></a>
+      <a rel="dominante" href="images/requiem2011_juliste.jpg" title="Dominante Requiem poster - 10th January, 2011"></a>
+      
+      <a rel="aow" href="images/aow_logo.jpg" name="Aalto on Waves" date="2011-03-22" title="Aalto on Waves logo - 22nd March, 2011"></a>
+      <a rel="aow" href="images/aow_website.jpg" title="Aalto on Waves website - 17st April, 2011"></a>
+      
+      <a rel="mlab" href="#medialab_reasons" name="Today" date="2011-04-18"></a>
+      <a rel="mlab" href="#medialab_contribute"></a>
+    </ul>
+  
+    <div id="projects">
+      <div id="project-humpla">
+        <video width="640" height="480" controls preload loop>
+          <source src="images/humpla.ogv" type='video/ogg; codecs="theora, vorbis"'>
+          Sorry, video tag not supported
+        </video>
+      </div>
+      
+      <div id="medialab_reasons" class="medialab_slide">
+        <h2>Why am I applying to the Media Lab?</h2>
+        <ul class="big-points">
+          <li>I learn best when around talented people</li>
+          <li>I want to participate in interesting studies and research</li>
+          <li>I've always wanted to study at TaiK</li>
+        </ul>
+      </div>
+      <div id="medialab_contribute" class="medialab_slide">
+        <h2>What can I bring to the Media Lab?</h2>
+        <ul class="big-points">
+          <li>I have a lot of knowledge about web technology and web businesses</li>
+          <li>I can help other students realize their concepts and ideas</li>
+          <li>I want to research new visualization methods</li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>
