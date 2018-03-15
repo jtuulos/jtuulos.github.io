@@ -1,0 +1,53 @@
+body {
+  margin: 0 auto;
+  max-width: 25em;
+  padding: 2em;
+  font: 1.1em/1.75 sans-serif;
+  background-color: #fafafa;
+  color: #313841;
+  text-align: justify;
+}
+
+header h1 {
+  font-size: 1.2em;
+}
+
+a {
+  color: #ff5622;
+  font-weight: 600;
+}
+
+.with-title {
+  border-bottom: 1px dotted #00aeb5;
+  cursor: help;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.social-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 1.5em 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.social-links li a {
+  display: inline-block;
+  height: 1.6em;
+  width: 1.6em;
+}
+
+.social-links li a path {
+  fill: #00aeb5;
+}
+
+.social-links li a:hover path,
+.social-links li a:focus path {
+  fill: #ff5622;
+}
