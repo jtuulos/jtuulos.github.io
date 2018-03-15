@@ -1,9 +1,15 @@
+body,
+html {
+  height: 100%;
+}
+
 body {
   margin: 0 auto;
   max-width: 25em;
   padding: 2em;
   font: 1.1em/1.75 sans-serif;
-  background-color: #fafafa;
+  background-color: #fff;
+  background: linear-gradient(162deg, #fff, #f2f2f0);
   color: #313841;
   text-align: justify;
 }
@@ -39,8 +45,8 @@ a {
 
 .social-links li a {
   display: inline-block;
-  height: 1.6em;
-  width: 1.6em;
+  height: 32px;
+  width: 32px;
 }
 
 .social-links li a path {
