@@ -1,14 +1,9 @@
-body,
-html {
-  /* height: 100%; */
-}
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  padding: 2em;
+  padding: 1.5em;
   font: 1.1em/1.75 sans-serif;
   background-image: url('images/marshalls_beach.svg');
   background-position: center center;
@@ -20,7 +15,8 @@ body {
 
 article {
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 5em;
+  margin-top: 9vw;
   max-width: 25em;
 }
 
