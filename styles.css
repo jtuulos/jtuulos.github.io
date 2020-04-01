@@ -10,13 +10,12 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #313841;
+  color: #171a1f;
 }
 
 article {
   position: relative;
-  margin: 0 auto 5em;
-  margin-top: 9vw;
+  margin: 6vw auto 8vw;
   max-width: 25em;
 }
 
@@ -52,12 +51,12 @@ header h1 {
 }
 
 a {
-  color: #ff5622;
+  color: #3561b3;
   font-weight: 600;
 }
 
 .with-title {
-  border-bottom: 1px dotted #00aeb5;
+  border-bottom: 1px dotted #3561B3;
   cursor: help;
 }
 
@@ -83,10 +82,10 @@ a {
 }
 
 .social-links li a path {
-  fill: #00aeb5;
+  fill: #a4b8d3;
 }
 
 .social-links li a:hover path,
 .social-links li a:focus path {
-  fill: #ff5622;
+  fill: #3561B3;
 }
